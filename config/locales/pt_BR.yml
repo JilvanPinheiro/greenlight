@@ -132,6 +132,7 @@ pt_BR:
         username: Identificação
       title: Administrar Usuários
   add_to_google_calendar: "Adicionar ao Google Calendar"
+  bigbluebutton: Doccloud
   doccloud: Doccloud
   doccloud_exception: "Oops, um erro ocorreu ao iniciar a sala."
   cancel: Cancelar
