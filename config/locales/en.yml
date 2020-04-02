@@ -160,8 +160,8 @@ en:
         username: Username
       title: Manage Users
   add_to_google_calendar: "Add to Google Calendar"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: Oops, there was an error when starting the meeting!
+  doccloud: Doccloud
+  doccloud_exception: Oops, there was an error when starting the meeting!
   cancel: Cancel
   cookies:
     cookie_info: Cookies help us deliver our services. By using our services, you agree to our use of cookies.
@@ -178,7 +178,7 @@ en:
   email_sent: Your %{email_type} email has been sent! (Please check your Spam folder if you haven't received it)
   enter_your_name: Enter your name!
   errors:
-    bigbluebutton:
+    doccloud:
       help: Please make sure the proper steps have been taken. <a href="%{doc_link}">Learn more</a>
       message: Invalid BigBlueButton Endpoint and Secret
       title: Server Error

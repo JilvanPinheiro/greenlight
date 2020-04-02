@@ -167,7 +167,7 @@ class RoomsController < ApplicationController
     rescue BigBlueButton::BigBlueButtonException => e
       logger.error("Support: #{@room.uid} start failed: #{e}")
 
-      redirect_to room_path, alert: I18n.t(e.key.to_s.underscore, default: I18n.t("bigbluebutton_exception"))
+      redirect_to room_path, alert: I18n.t(e.key.to_s.underscore, default: I18n.t("doccloud_exception"))
     end
 
     # Notify users that the room has started.

@@ -160,8 +160,8 @@ zh_CN:
         username: 用户名
       title: 管理用户
   add_to_google_calendar: "添加到谷歌日历"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: 哎呀，启动会议出错！
+  doccloud: Doccloud
+  doccloud_exception: 哎呀，启动会议出错！
   cancel: 取消
   cookies:
     cookie_info: Cookies帮助我们提供服务。您同意我们使用cookies才能使用这些服务。
@@ -178,7 +178,7 @@ zh_CN:
   email_sent: "您的 %{email_type} 邮件已经发送！（如果您没有收到邮件，请检查您的垃圾邮件文件夹）"
   enter_your_name: 输入您的名字！
   errors:
-    bigbluebutton:
+    doccloud:
       help: "请确保采取了正确的步骤. <a href=\"%{doc_link}\">了解更多信息</a>"
       message: BigBlueButton的Endpoint 和Secret无效
       title: 服务器错误

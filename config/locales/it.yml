@@ -128,8 +128,8 @@ it:
         username: Nome utente
       title: Gestisci utenti
   add_to_google_calendar: "Aggiungi a Google Calendar"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Dannazione, c'è stato un errore nell'avvio del meeting!"
+  doccloud: Doccloud
+  doccloud_exception: "Dannazione, c'è stato un errore nell'avvio del meeting!"
   cancel: Annulla
   cookies:
     cookie_info: "I Cookies aiutano a fornire i servizi personalizzati. Usando i nostri servizi, accetti di usare i nostri Cookies."
@@ -146,7 +146,7 @@ it:
   email_sent: "La tua email di %{email_type} è stata inviata! (Controlla nella cartella Spam della tua email se non la ricevi)"
   enter_your_name: Inserisci il tuo nome!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Per favore, assicurarsi di aver completato tutti i passaggi. <a href=\"%{doc_link}\">Altre informazioni</a>"
       message: "Impostazioni di collegamento, Endpoint e Secret, errati"
       title: Errore del server

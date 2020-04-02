@@ -160,8 +160,8 @@ hu_HU:
         username: Felhasználónév
       title: Felhasználókezelés
   add_to_google_calendar: "Google Naptár hozzáadása"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Sajnáljuk, hiba történt a találkozó indításakor!"
+  doccloud: Doccloud
+  doccloud_exception: "Sajnáljuk, hiba történt a találkozó indításakor!"
   cancel: Mégsem
   cookies:
     cookie_info: A szolgáltatását nyújtásában segítenek a sütijeink. A szolgáltatásaink használatával elfogadod a sütijeinket.
@@ -178,7 +178,7 @@ hu_HU:
   email_sent: "%{email_type} címre e-mail küldtünk. (Kérjük, ellenőrizd a SPAM mappát is)"
   enter_your_name: Add meg az e-mail címed!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Kérjük, ellenőrizd, hogy a szükséges lépéseket megtetted. <a href=\"%{doc_link}\"> Bővebb információk</a>"
       message: Érvénytelen BigBlueButton Endpoint és Secret
       title: Szerverhiba

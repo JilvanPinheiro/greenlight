@@ -160,8 +160,8 @@ nl:
         username: Gebruikersnaam
       title: Gebruikers beheren
   add_to_google_calendar: "Toevoegen aan Google Agenda"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Oeps, er is een fout opgetreden bij het starten van de vergadering!"
+  doccloud: Doccloud
+  doccloud_exception: "Oeps, er is een fout opgetreden bij het starten van de vergadering!"
   cancel: Annuleren
   cookies:
     cookie_info: "Cookies helpen ons onze diensten te leveren. Door onze services te gebruiken, gaat u akkoord met ons gebruik van cookies."
@@ -178,7 +178,7 @@ nl:
   email_sent: "Uw %{email_type} e-mail is verzonden! (Controleer uw spam map als u deze niet hebt ontvangen)"
   enter_your_name: Vul uw naam in!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Zorg ervoor dat de juiste stappen zijn genomen. <a href=\"%{doc_link}\"> Meer informatie </a>"
       message: Ongeldig BigBlueButton-eindpunt en geheim
       title: Serverfout

@@ -128,8 +128,8 @@ ar:
         username: اسم المستخدم
       title: إدارة المستخدمين
   add_to_google_calendar: "إضافة إلى تقويم Google"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: عفوًا ، حدث خطأ عند بدء الاجتماع
+  doccloud: Doccloud
+  doccloud_exception: عفوًا ، حدث خطأ عند بدء الاجتماع
   cancel: إلغاء
   cookies:
     cookie_info: ملفات تعريف الارتباط تساعدنا على تقديم خدماتنا. باستخدام خدماتنا ، أنت توافق على استخدامنا لملفات تعريف الارتباط.
@@ -146,7 +146,7 @@ ar:
   email_sent: "تم إرسال البريد الإلكتروني الخاص بك% {email_type} ! (يرجى التحقق من مجلد البريد المزعج إذا لم تكن قد تلقيت ذلك)"
   enter_your_name: أدخل أسمك!
   errors:
-    bigbluebutton:
+    doccloud:
       help: يرجى التأكد من اتخاذ الخطوات المناسبة
       message: نقطة النهاية والسرية BigBlueButton غير صالحة
       title: خطأ في الخادم

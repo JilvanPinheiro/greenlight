@@ -132,8 +132,8 @@ sk_SK:
         username: Prihlasovacie meno
       title: Manažment užívateľov
   add_to_google_calendar: "Pridaj do Google Kalendára"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Oops, pri štarte konferencie nastala chyba!"
+  doccloud: Doccloud
+  doccloud_exception: "Oops, pri štarte konferencie nastala chyba!"
   cancel: Zrušiť
   cookies:
     cookie_info: Cookies nám pomáhajú poskytovať naše služby. Používaním našich služieb súhlasíte s ich použitím.
@@ -150,7 +150,7 @@ sk_SK:
   email_sent: "Váš email pre %{email_type} bol odoslaný! (Prosím skontrolujte priečinok Spam, ak ste správu neobdržali)"
   enter_your_name: Zadajte svoje meno!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Prosím ubezpečte sa, že ste postupovali podľa návodu. <a href=\"%{doc_link}\">Learn more</a>"
       message: Neplatný BigBlueButton Endpoint a(lebo) Secret
       title: Chyba Servra

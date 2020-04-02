@@ -132,8 +132,8 @@ es:
         username: Nombre de usuario
       title: Administrar usuarios
   add_to_google_calendar: "Agregar al Calendario de Google"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: ¡Oh no! Ocurrió un error al iniciar la sesión.
+  doccloud: Doccloud
+  doccloud_exception: ¡Oh no! Ocurrió un error al iniciar la sesión.
   cancel: Cancelar
   cookies:
     cookie_info: "Las cookies nos ayudan a proveer nuestros servicios. Al utilizar nuestros servicios, usted acepta nuestro uso de las cookies."
@@ -150,7 +150,7 @@ es:
   email_sent: "Sus %{email_type} emails han sido enviados. (Revise su carpeta de Spam si no los ha recibido)"
   enter_your_name: Introduzca su nombre
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Asegúrese de que los pasos han sido seguidos correctamente. <a href=\"%{doc_link}\">Saber más</a>"
       message: La URL o clave secreta del servidor BigBlueButton son inválidos
       title: Error del servidor

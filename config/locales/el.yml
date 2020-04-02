@@ -128,8 +128,8 @@ el:
         username:
       title:
   add_to_google_calendar:
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception:
+  doccloud: Doccloud
+  doccloud_exception:
   cancel: Ακύρωση
   cookies:
     cookie_info:
@@ -146,7 +146,7 @@ el:
   email_sent:
   enter_your_name: Εισάγετε το όνομα σας!
   errors:
-    bigbluebutton:
+    doccloud:
       help:
       message:
       title:

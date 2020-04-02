@@ -160,8 +160,8 @@ ru:
         username: Имя пользователя
       title: Управление пользователями
   add_to_google_calendar: "Добавить в мой Google Calendar"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Упс, произошла ошибка при попытке запуска встречи!"
+  doccloud: Doccloud
+  doccloud_exception: "Упс, произошла ошибка при попытке запуска встречи!"
   cancel: Отмена
   cookies:
     cookie_info: Cookies помогают нам в предоставлении наших сервисов. Используя наши сервисы Вы соглашаетесь с использованием cookies.
@@ -178,7 +178,7 @@ ru:
   email_sent: "Ваш %{email_type} email был отправлен! (Пожалуйста проверьте папку \"Спам\" если вы не получили его)"
   enter_your_name: Введите ваше имя!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Пожалуйста, убедитесь, что были приняты правильные меры. <a href=\"%{doc_link}\">Ознакомиться</a>"
       message: Проверьте BigBlueButton Endpoint и Secret
       title: Ошибка сервера

@@ -128,8 +128,8 @@ pt:
         username:
       title:
   add_to_google_calendar:
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Oops, aconteceu um erro ao tentar começar a reunião."
+  doccloud: Doccloud
+  doccloud_exception: "Oops, aconteceu um erro ao tentar começar a reunião."
   cancel: Cancelar
   cookies:
     cookie_info: "Cookies ajudam a gente a entregar os nossos serviços. Ao usar nossos serviços, você aceita o nosso uso de cookies."
@@ -146,7 +146,7 @@ pt:
   email_sent:
   enter_your_name: Insira seu nome!
   errors:
-    bigbluebutton:
+    doccloud:
       help:
       message:
       title:

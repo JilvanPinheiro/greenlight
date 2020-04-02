@@ -128,8 +128,8 @@ pl_PL:
         username: Nazwa użytkownika
       title: Zarządzaj użytkownikami
   add_to_google_calendar: "Dodaj do Kalendarza Google"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Ups, wystąpił błąd podczas rozpoczynania spotkania!"
+  doccloud: Doccloud
+  doccloud_exception: "Ups, wystąpił błąd podczas rozpoczynania spotkania!"
   cancel: Anuluj
   cookies:
     cookie_info: "Ciasteczka pomagają nam dostarczyć nasze usługi. Korzystając z naszych usług, zgadzasz się na korzystanie z ciasteczek."
@@ -146,7 +146,7 @@ pl_PL:
   email_sent: "Twój %{email_type} email został wysłany! (Sprawdź folder Spam, jeśli go nie otrzymałeś)"
   enter_your_name: Wprowadź swoje imię!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Upewnij się, że podjęto odpowiednie kroki. <a href=\"%{doc_link}\">Dowiedz się więcej</a>"
       message: Błędny BigBlueButton Endpoint i Secret
       title: Błąd serwera

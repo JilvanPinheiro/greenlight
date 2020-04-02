@@ -128,8 +128,8 @@ sv_SE:
         username: Användarnamn
       title: Hantera användare
   add_to_google_calendar: "Lägg till i Google Kalender"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Oj, det var ett fel när du startade mötet!"
+  doccloud: Doccloud
+  doccloud_exception: "Oj, det var ett fel när du startade mötet!"
   cancel: Avbryt
   cookies:
     cookie_info: Kakor hjälper oss att leverera våra tjänster. Genom att använda våra tjänster godkänner du vår användning av kakor.
@@ -146,7 +146,7 @@ sv_SE:
   email_sent: "Ditt %{email_type} e-postmeddelande har skickats! (Vänligen kontrollera din Spam-mapp om du inte fått den)"
   enter_your_name: Ange ditt namn!
   errors:
-    bigbluebutton:
+    doccloud:
       help: "Se till att de korrekta åtgärderna har tagits. <a href=\"%{doc_link}\">Läs mer</a>"
       message: Ogiltig BigBlueButton Endpoint och Secret
       title: Serverfel

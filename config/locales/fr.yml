@@ -128,8 +128,8 @@ fr:
         username: Nom d'utilisateur
       title: Gérer les utilisateurs
   add_to_google_calendar: "Ajouter au calendrier Google"
-  bigbluebutton: BigBlueButton
-  bigbluebutton_exception: "Oups, une erreur s'est produite lors du démarrage de la réunion !"
+  doccloud: Doccloud
+  doccloud_exception: "Oups, une erreur s'est produite lors du démarrage de la réunion !"
   cancel: Annuler
   cookies:
     cookie_info: "Les cookies nous aident à fournir nos services. En utilisant nos services, vous acceptez notre utilisation des cookies."
@@ -146,7 +146,7 @@ fr:
   email_sent:
   enter_your_name: Entrez votre nom !
   errors:
-    bigbluebutton:
+    doccloud:
       help:
       message:
       title: Erreur serveur
