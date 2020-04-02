@@ -133,6 +133,7 @@ pt_BR:
       title: Administrar Usuários
   add_to_google_calendar: "Adicionar ao Google Calendar"
   bigbluebutton: Doccloud
+  softwrap: SoftWrap
   doccloud: Doccloud
   doccloud_exception: "Oops, um erro ocorreu ao iniciar a sala."
   cancel: Cancelar
