@@ -127,8 +127,10 @@ pt:
         uid:
         username:
       title:
-  add_to_google_calendar:
+  add_to_google_calendar: "Adicionar ao Google Calendar"
+  bigbluebutton: Doccloud
   doccloud: Doccloud
+  
   doccloud_exception: "Oops, aconteceu um erro ao tentar começar a reunião."
   cancel: Cancelar
   cookies:

@@ -160,6 +160,7 @@ en:
         username: Username
       title: Manage Users
   add_to_google_calendar: "Add to Google Calendar"
+  bigbluebutton: Doccloud
   doccloud: Doccloud
   doccloud_exception: Oops, there was an error when starting the meeting!
   cancel: Cancel

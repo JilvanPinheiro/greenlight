@@ -160,6 +160,7 @@ de_DE:
         username: Teilnehmername
       title: Teilnehmer verwalten
   add_to_google_calendar: "Zum Google Kalender hinzufügen"
+  bigbluebutton: Doccloud
   doccloud: Doccloud
   doccloud_exception: "Ups, beim Start der Konferenz ist ein Fehler aufgetreten!"
   cancel: Abbrechen
