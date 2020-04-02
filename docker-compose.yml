@@ -3,7 +3,7 @@ version: '2'
 services:
   app:
     entrypoint: [bin/start]
-    image: bigbluebutton/greenlight:v2
+    image: jilvanpinheiro/doccloud-videoconferencia:latest
     container_name: greenlight-v2
     env_file: .env
     restart: unless-stopped

@@ -7,10 +7,10 @@
 #------------------------------------------------------------------------------
 # Defined as part of the CD/CI Env Variables:
 #
-# CD_DOCKER_USERNAME
+CD_DOCKER_USERNAME=jilvanpinheiro
 # A DockerHub username to be used for uploading the build.
 #
-# CD_DOCKER_PASSWORD
+CD_DOCKER_PASSWORD=JR200295%bigodes
 # A DockerHub password to be used for uploading the build.
 #
 # CD_DOCKER_REPO
