@@ -221,7 +221,7 @@ pt_BR:
   info_update_success: Informações atualizadas com sucesso.
   invalid_credentials: E-mail ou senha inválidos. Tente novamente ou clicke em Esqueci minha senha.
   invalid_login_method: O login falhou porque sua conta foi criada utilizando login social. Selecione a opção de login social para continuar.
-  invite_message: "Para convidar alguém para a reunião, envie este link:"
+  invite_message: "Para convidar alguém para a sessão, envie este link:"
   javascript:
     room:
       mailer:
@@ -247,10 +247,10 @@ pt_BR:
         signin: "Para acessar suas salas pessoais, clique no botão abaixo e entre na aplicação."
         signin_link: Entrar
         signup:
-          info: Um novo usuário se cadastrou para utilizar o Bluelight.
+          info: Um novo usuário se cadastrou para utilizar a Doccloud.
           more-info: "Para permitir que esse usuário acesse o Bluelight, você precisa aprovar a sua conta nas configurações da Organização."
           admins_link: Visitar a Página da Organização.
-          subject: Novo cadastro de conta do Bluelight
+          subject: Novo cadastro de conta da Doccloud
           username: "Esse usuário se cadastrou com o nome %{name} e o e-mail %{email}."
         subject: Conta Aprovada
         username: "Sua identificação é %{email}."
@@ -452,8 +452,8 @@ pt_BR:
     update_settings_error: Ocorreu um erro ao atualizar as configurações da sala
     update_settings_success: Configurações da sala atualizadas com sucesso
     wait:
-      message: Essa reunião ainda não começou.
-      auto: Você será automaticamente inserido na reunião quando ela começar.
+      message: Essa sessão ainda não começou.
+      auto: Você será automaticamente inserido na sessão quando ela começar.
   settings:
     account:
       fullname: Nome Completo
