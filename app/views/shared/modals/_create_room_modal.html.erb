@@ -43,37 +43,29 @@
               </span>
             </div>
 
-            <% if Rails.configuration.room_features.include? "mute-on-join" %>
-              <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
-                <span class="custom-switch-description"><%= t("modal.room_settings.mute")%></span>
-                <%= f.check_box :mute_on_join, class: "custom-switch-input", checked: false %>
-                <span class="custom-switch-indicator float-right cursor-pointer"></span>
-              </label>
-            <% end %>
+            <div class="input-icon mb-2">
+              <span class="input-icon-addon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </span>
+              <%= f.text_field :order, id: "create-room-order", class: "form-control text-center", value: "", placeholder: t("modal.create_room.order_placeholder"), autocomplete: :off %>
+              <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
+            </div>
 
-            <% if Rails.configuration.room_features.include? "require-moderator-approval" %>
-              <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
-                <span class="custom-switch-description"><%= t("modal.room_settings.require_approval")%></span>
-                <%= f.check_box :require_moderator_approval, class: "custom-switch-input", checked: false %>
-                <span class="custom-switch-indicator float-right cursor-pointer"></span>
-              </label>
-            <% end %>
-            
-            <% if Rails.configuration.room_features.include? "anyone-can-start" %>
-              <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
-                <span class="custom-switch-description"><%= t("modal.room_settings.start")%></span>
-                <%= f.check_box :anyone_can_start, class: "custom-switch-input", checked: false %>
-                <span class="custom-switch-indicator float-right cursor-pointer"></span>
-              </label>
-            <% end %>
+            <div class="input-icon mb-2">
+              <span class="input-icon-addon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </span>
+              <%= f.text_field :order, id: "create-room-phone", class: "form-control text-center", value: "", placeholder: t("modal.create_room.phone"), autocomplete: :off %>
+              <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
+            </div>
 
-            <% if Rails.configuration.room_features.include? "all-join-moderator" %>
-              <label class="custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
-                <span class="custom-switch-description"><%= t("modal.room_settings.join_moderator")%></span>
-                <%= f.check_box :all_join_moderator, class: "custom-switch-input", checked: false %>
-                <span class="custom-switch-indicator float-right cursor-pointer"></span>
-              </label>
-            <% end %>
+            <div class="input-icon mb-2">
+              <span class="input-icon-addon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </span>
+              <%= f.text_field :order, id: "create-room-email", class: "form-control text-center", value: "", placeholder: t("modal.create_room.email"), autocomplete: :off %>
+              <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
+            </div>
 
             <label id="auto-join-label" class="create-only custom-switch pl-0 mt-3 mb-3 w-100 text-left d-inline-block">
               <span class="custom-switch-description"><%= t("modal.create_room.auto_join") %></span>
