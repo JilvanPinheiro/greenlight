@@ -307,8 +307,8 @@ pt_BR:
       free_delete: Você poderá apagar esta sala a qualquer momento.
       name_placeholder: Número do pedido
       order_placeholder: Número do pedido Gedar
-      order_placeholder: Número do pedido Gedar
-      email: Número do pedido Gedar
+      phone: Telefone
+      email: Email
       not_blank: O nome da sala não pode ficar vazio.
       title: Criar nova sala
     delete_account:
