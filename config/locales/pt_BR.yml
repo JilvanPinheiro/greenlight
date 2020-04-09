@@ -232,6 +232,7 @@ pt_BR:
   landing:
     about: "%{href} é um sistema para visualidação de certificado digital por videoconferência para a rede Doccloud. Os AGRs podem criar suas salas para realizar as sessões e convidar os clientes utilizando um link curto."
     welcome: Bem-vindo a Doccloud.
+    tutorial: Fale com a nossa equipe sobre como utilizar este sistema
     video: Assista ao nosso tutorial sobre como utilizar o BlueLight
     upgrade: Mostre-me como atualizar para o 2.0!
     version: "Lançamos uma nova versão do Bluelight, entretanto sua base de dados é incompatível."
