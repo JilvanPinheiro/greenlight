@@ -98,4 +98,15 @@ class UserMailer < ApplicationMailer
 
     mail to: admin_emails, subject: t('mailer.user.invite.signup.subject')
   end
+
+  def invite_record_session(name, email, url, settings)
+    @settings = settings
+    @name = name
+    @email = email
+    @url = url
+    @image = logo_image
+    @color = user_color
+    mail to: email, subject: t('mailer.user.invite.subject')
+  end
+
 end
