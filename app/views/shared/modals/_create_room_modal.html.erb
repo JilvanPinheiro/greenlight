@@ -33,7 +33,7 @@
             </div>
 
             <div class="input-icon mb-2">
-              <span onclick="generateAccessCode()" class="input-icon-addon allow-icon-click cursor-pointer">
+              <span onload="generateAccessCode()" class="input-icon-addon allow-icon-click cursor-pointer">
                 <i class="fas fa-dice"></i>
               </span>
               <%= f.label :access_code, t("modal.create_room.access_code_placeholder"), id: "create-room-access-code", class: "form-control" %>
@@ -45,25 +45,33 @@
 
             <div class="input-icon mb-2">
               <span class="input-icon-addon">
-                <i class="fas fa-chalkboard-teacher"></i>
+                <i class="fas fa-receipt"></i>
               </span>
               <%= f.text_field :order, id: "create-room-order", class: "form-control text-center", value: "", placeholder: t("modal.create_room.order_placeholder"), autocomplete: :off %>
               <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
             </div>
 
             <div class="input-icon mb-2">
+            <span class="input-icon-addon">
+              <i class="fas fa-id-card"></i>
+            </span>
+            <%= f.text_field :document, id: "create-room-document", class: "form-control text-center", value: "", placeholder: t("modal.create_room.document"), autocomplete: :off %>
+            <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
+          </div>
+
+            <div class="input-icon mb-2">
               <span class="input-icon-addon">
-                <i class="fas fa-chalkboard-teacher"></i>
+                <i class="fas fa-phone"></i>
               </span>
-              <%= f.text_field :order, id: "create-room-phone", class: "form-control text-center", value: "", placeholder: t("modal.create_room.phone"), autocomplete: :off %>
+              <%= f.text_field :phone, id: "create-room-phone", class: "form-control text-center", value: "", placeholder: t("modal.create_room.phone"), autocomplete: :off %>
               <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
             </div>
 
             <div class="input-icon mb-2">
               <span class="input-icon-addon">
-                <i class="fas fa-chalkboard-teacher"></i>
+                <i class="fas fa-envelope"></i>
               </span>
-              <%= f.text_field :order, id: "create-room-email", class: "form-control text-center", value: "", placeholder: t("modal.create_room.email"), autocomplete: :off %>
+              <%= f.text_field :email, id: "create-room-email", class: "form-control text-center", value: "", placeholder: t("modal.create_room.email"), autocomplete: :off %>
               <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
             </div>
 

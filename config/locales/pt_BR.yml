@@ -309,6 +309,7 @@ pt_BR:
       name_placeholder: Número do pedido
       order_placeholder: Número do pedido Gedar
       phone: Telefone
+      document: Documento (CNPJ/CPF)
       email: Email
       not_blank: O nome da sala não pode ficar vazio.
       title: Criar nova sala
