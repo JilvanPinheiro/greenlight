@@ -33,7 +33,7 @@
             </div>
 
             <div class="input-icon mb-2">
-              <span onload="generateAccessCode()" class="input-icon-addon allow-icon-click cursor-pointer">
+              <span onclick="generateAccessCode()" class="input-icon-addon allow-icon-click cursor-pointer">
                 <i class="fas fa-dice"></i>
               </span>
               <%= f.label :access_code, t("modal.create_room.access_code_placeholder"), id: "create-room-access-code", class: "form-control" %>
@@ -68,7 +68,7 @@
               <span class="input-icon-addon">
                 <i class="fas fa-envelope"></i>
               </span>
-              <%= f.text_field :email, id: "create-room-email", class: "form-control text-center", value: "", placeholder: t("modal.create_room.email"), autocomplete: :off %>
+              <%= f.text_field :client_email, id: "create-room-email", class: "form-control text-center", value: "", placeholder: t("modal.create_room.email"), autocomplete: :off %>
               <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
             </div>
 

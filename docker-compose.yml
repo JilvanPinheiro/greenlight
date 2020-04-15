@@ -3,7 +3,10 @@ version: '2'
 services:
   app:
     entrypoint: [bin/start]
-    image: jilvanpinheiro/doccloud-videoconferencia:latest
+    # image: jilvanpinheiro/doccloud-videoconferencia:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: greenlight-v2
     env_file: .env
     restart: unless-stopped

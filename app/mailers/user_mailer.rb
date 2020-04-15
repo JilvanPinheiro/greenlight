@@ -109,4 +109,16 @@ class UserMailer < ApplicationMailer
     mail to: email, subject: t('mailer.user.invite.subject')
   end
 
+  def send_room_code(email, url, access_code, settings)
+    @settings = settings
+    @access_code = access_code
+    puts @access_code
+    @name = "Teste"
+    @email = email
+    @url = url
+    @image = logo_image
+    @color = user_color
+    mail to: email, subject: t("mailer.client.invite.mail_subject")
+  end
+
 end

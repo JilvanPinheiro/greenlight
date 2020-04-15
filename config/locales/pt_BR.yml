@@ -241,6 +241,13 @@ pt_BR:
   login: Entrar
   login_title: Entre em sua conta.
   mailer:
+    client:
+      invite:
+        mail_subject: Doccloud - Código de acesso para validação online de Certificado Digital.
+        subject: Validação de Certificado Digital.
+        info: Este é o seu código para realizar a validação por videoconferência.
+        acess_code: "Você deverá indicar este código de acesso na plataforma:  %{access_code}"
+        signup_link: Entrar na Sessão
     user:
       approve:
         info: Sua conta foi aprovada.
@@ -302,7 +309,7 @@ pt_BR:
       title: Criar novo papel
     create_room:
       access_code: Código de acesso
-      access_code_placeholder: Gerar um código de acesso opcional para a sessão 
+      access_code_placeholder: Gerar o código de acesso para a sessão 
       auto_join: Entrar na sessão automaticamente.
       create: Criar Sessão
       free_delete: Você poderá apagar esta sessão a qualquer momento.
@@ -412,6 +419,8 @@ pt_BR:
     password: Nova senha
     confirm: Confirmação da nova senha
     update: Atualizar senha
+  room:
+    code: Código da sessão
   roles:
     active: Ativo
     admin: Administrador
@@ -442,7 +451,7 @@ pt_BR:
       recent_rooms: Ir para uma sessão recente
       title: Entrar na sessão
     no_sessions: Nenhuma sessão foi realizada nesta sessão.
-    recordings: Gravações da Sessão
+    recordings: Validações Registradas
     room_limit: Você atingiu o número máximo de sessões permitido
     room_limit_exceeded: "Você excedeu o número de sessões permitido. Por favor, delete %{difference} sessão(s) para acessar essa sessão."
     sessions: Sessões

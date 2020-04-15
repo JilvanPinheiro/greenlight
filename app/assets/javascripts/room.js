@@ -208,6 +208,7 @@ function updateCurrentSettings(settings_path){
 }
 
 function generateAccessCode(){
+  console.log("chamado");
   const accessCodeLength = 6
   var validCharacters = "0123456789"
   var accessCode = ""

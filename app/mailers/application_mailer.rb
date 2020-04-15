@@ -17,6 +17,6 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'no-reply@doccloud.com.br'
   layout 'mailer'
 end

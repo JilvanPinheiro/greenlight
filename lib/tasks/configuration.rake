@@ -49,6 +49,7 @@ def test_smtp
     s.sendmail('test', ENV['SMTP_USERNAME'], 'notifications@example.com')
   end
 rescue => e
+  puts "Error connecting to SMTP - #{e}"
   failed("Error connecting to SMTP - #{e}")
 end
 

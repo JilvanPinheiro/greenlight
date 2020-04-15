@@ -21,7 +21,9 @@ class RoomsController < ApplicationController
   include Recorder
   include Joiner
   include Populator
+  include Emailer
 
+  before_action :disable_room_creation, unless: -> { Rails.configuration.enable_email_verification }
   before_action :validate_accepted_terms, unless: -> { !Rails.configuration.terms }
   before_action :validate_verified_email, except: [:show, :join],
                 unless: -> { !Rails.configuration.enable_email_verification }
@@ -43,19 +45,26 @@ class RoomsController < ApplicationController
     return redirect_to current_user.main_room, flash: { alert: I18n.t("room.room_limit") } if room_limit_exceeded
 
     # Create room
-    @room = Room.new(name: room_params[:name], access_code: room_params[:access_code])
+    @room = Room.new(name: room_params[:name], access_code: room_params[:access_code], order: room_params[:order], client_email: room_params[:client_email], document: room_params[:document], phone: room_params[:phone])
     @room.owner = current_user
     @room.room_settings = create_room_settings_string(room_params)
 
+    puts "Vai criar a sala"
     # Save the room and redirect if it fails
     return redirect_to current_user.main_room, flash: { alert: I18n.t("room.create_room_error") } unless @room.save
+
+    # Send the code to the client
+    send_room_code_email(@room[:client_email],@room.uid, @room[:access_code])
+
+    # sms = AwsSms.new
+    # sms.send(@room[:phone], "O seu código de acesso na Doccloud é: " + @room[:access_code])
 
     logger.info "Support: #{current_user.email} has created a new room #{@room.uid}."
 
     # Redirect to room is auto join was not turned on
     return redirect_to @room,
       flash: { success: I18n.t("room.create_room_success") } unless room_params[:auto_join] == "1"
-
+    
     # Start the room if auto join was turned on
     start
   end
@@ -187,7 +196,11 @@ class RoomsController < ApplicationController
       @room.update_attributes(
         name: options[:name],
         room_settings: room_settings_string,
-        access_code: options[:access_code]
+        access_code: options[:access_code],
+        order: room_params[:order], 
+        client_email: room_params[:client_email], 
+        document: room_params[:document], 
+        phone: room_params[:phone]
       )
 
       flash[:success] = I18n.t("room.update_settings_success")
@@ -288,7 +301,7 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :auto_join, :mute_on_join, :access_code,
-      :require_moderator_approval, :anyone_can_start, :all_join_moderator, :document, :email, :order, :phone,)
+      :require_moderator_approval, :anyone_can_start, :all_join_moderator, :document, :client_email, :order, :phone,)
   end
 
   # Find the room from the uid.
@@ -341,6 +354,11 @@ class RoomsController < ApplicationController
   # Checks if the room is shared with the user and room sharing is enabled
   def room_shared_with_user
     shared_access_allowed ? @room.shared_with?(current_user) : false
+  end
+
+  # Redirects to 404 if emails are not enabled
+  def disable_room_creation
+    redirect_to '/404'
   end
 
   def room_limit_exceeded
