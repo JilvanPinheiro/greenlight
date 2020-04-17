@@ -22,6 +22,9 @@ class RoomsController < ApplicationController
   include Joiner
   include Populator
   include Emailer
+  include Sms
+
+  require 'securerandom'
 
   before_action :disable_room_creation, unless: -> { Rails.configuration.enable_email_verification }
   before_action :validate_accepted_terms, unless: -> { !Rails.configuration.terms }
@@ -48,6 +51,7 @@ class RoomsController < ApplicationController
     @room = Room.new(name: room_params[:name], access_code: room_params[:access_code], order: room_params[:order], client_email: room_params[:client_email], document: room_params[:document], phone: room_params[:phone])
     @room.owner = current_user
     @room.room_settings = create_room_settings_string(room_params)
+    @room[:access_code] = SecureRandom.hex(4)
 
     puts "Vai criar a sala"
     # Save the room and redirect if it fails
@@ -55,9 +59,8 @@ class RoomsController < ApplicationController
 
     # Send the code to the client
     send_room_code_email(@room[:client_email],@room.uid, @room[:access_code])
-
-    # sms = AwsSms.new
-    # sms.send(@room[:phone], "O seu código de acesso na Doccloud é: " + @room[:access_code])
+    
+    send_sms_message(@room[:phone], @room.uid, @room[:access_code])
 
     logger.info "Support: #{current_user.email} has created a new room #{@room.uid}."
 

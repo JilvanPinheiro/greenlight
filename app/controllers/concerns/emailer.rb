@@ -158,8 +158,6 @@ end
       return unless Rails.configuration.enable_email_verification
       UserMailer.send_room_code(email, room_url, access_code,  @settings).deliver_now
     rescue => e
-      puts "Erro no envio do email"
-      puts e
       logger.error "Support: Error in email delivery: #{e}"
       flash[:alert] = I18n.t(params[:message], default: I18n.t("delivery_error"))
     else

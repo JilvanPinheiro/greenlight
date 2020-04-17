@@ -135,4 +135,4 @@ gem "recaptcha"
 gem 'i18n-language-mapping', '~> 0.1.0'
 
 # Add AWS
-# gem 'aws_sms'
+gem 'aws-sdk-sns'

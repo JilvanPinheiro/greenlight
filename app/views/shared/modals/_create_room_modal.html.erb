@@ -1,17 +1,3 @@
-<%
-# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
-# Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
-# This program is free software; you can redistribute it and/or modify it under the
-# terms of the GNU Lesser General Public License as published by the Free Software
-# Foundation; either version 3.0 of the License, or (at your option) any later
-# version.
-#
-# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-# You should have received a copy of the GNU Lesser General Public License along
-# with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
-%>
 
 <div class="modal fade" id="createRoomModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -28,16 +14,8 @@
               <span class="input-icon-addon">
                 <i class="fas fa-chalkboard-teacher"></i>
               </span>
-              <%= f.text_field :name, id: "create-room-name", class: "form-control text-center", value: "", placeholder: t("modal.create_room.name_placeholder"), autocomplete: :off %>
+              <%= f.text_field :name, id: "create-room-name", class: "form-control text-center", value: "", placeholder: t("modal.create_room.name_placeholder"), autocomplete: :off, onchange: "generateAccessCode()" %>
               <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
-            </div>
-
-            <div class="input-icon mb-2">
-              <span onclick="generateAccessCode()" class="input-icon-addon allow-icon-click cursor-pointer">
-                <i class="fas fa-dice"></i>
-              </span>
-              <%= f.label :access_code, t("modal.create_room.access_code_placeholder"), id: "create-room-access-code", class: "form-control" %>
-              <%= f.hidden_field :access_code %>
             </div>
 
             <div class="input-icon mb-2">
@@ -78,12 +56,13 @@
               <span class="custom-switch-indicator float-right cursor-pointer"></span>
             </label>
           <div class="mt-4">
+            <%= f.hidden_field :access_code %>
             <%= f.submit t("modal.create_room.create"), id: "create-room-submit", class: "create-only btn btn-primary btn-block" %>
             <%= f.submit t("modal.room_settings.update"), id: "create-room-submit", class: "update-only btn btn-primary btn-block" %>
           </div>
           <% end %>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" >
           <p class="create-only"><%= t("modal.create_room.free_delete") %></p>
           <p class="update-only"><%= t("modal.room_settings.footer_text") %></p>
         </div>
