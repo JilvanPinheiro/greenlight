@@ -29,6 +29,12 @@ pt_BR:
       models:
         user:
           confirmation: não corresponde à senha
+  home:
+    check_cpf: Consultar CPF
+    check: Verificar
+    not_allowed: Não é possível realizar a emissão por videoconferência.
+    label: Verifique se você pode ser atendido por videoconferência
+
   administrator:
     site_settings:
       authentication:
@@ -132,7 +138,7 @@ pt_BR:
       table:
         authenticator: Autenticador
         created: Criado
-        name: Nome
+        name: Pedido do ERP
         not_found: Nenhum usuário corresponde a sua pesquisa
         no_users: Nenhum usuário encontrado
         role: Função
@@ -391,20 +397,22 @@ pt_BR:
     no_user_recordings: Você não possui gravações.
     no_matched_recordings: "Nenhuma gravação corresponde à sua busca %{inject}."
     recorded_on: "Gravado em %{date}"
+    recorded_start: "Início: %{date}"
+    recorded_end: "Fim: %{date}"
     table:
-      name: Nome
+      name: Pedido ERP
       thumbnails: Miniaturas
       length: Duração
-      users: Usuários
+      users: Movimentação
       visibility: Visibilidade
-      formats: Formatos
+      formats: Arquivo
     visibility:
       public: Público
       unlisted: Não listado
     format:
       notes: Notas
       podcast: Podcast
-      presentation: Apresentação
+      presentation: Gravação
       statistics: Estatísticas
       video: Vídeo
   registration:
@@ -446,9 +454,9 @@ pt_BR:
     invited: Você foi convidado a participar
     invite_participants: Convidar participantes
     join: Participar
-    last_session: "Última sessão em %{session}"
+    last_session: "%{session}"
     login: Entrar
-    owner: Dono
+    owner: Criador
     no_room:
       description: Insira a URL da sessão ou o ID da sessão que você quer entrar.
       edit_profile: Modificar perfil de usuário
@@ -458,7 +466,7 @@ pt_BR:
       no_recent_rooms: Você não tem nenhuma sessão recente
       recent_rooms: Ir para uma sessão recente
       title: Entrar na sessão
-    no_sessions: Nenhuma sessão foi realizada nesta sessão.
+    no_sessions: Nenhuma sessão foi realizada.
     recordings: Validações Registradas
     room_limit: Você atingiu o número máximo de sessões permitido
     room_limit_exceeded: "Você excedeu o número de sessões permitido. Por favor, delete %{difference} sessão(s) para acessar essa sessão."

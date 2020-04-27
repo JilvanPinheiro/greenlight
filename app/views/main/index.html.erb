@@ -2,12 +2,28 @@
 <div class="background">
   <div class="container pt-9 pb-8">
     <div class="row">
-      <div class="col-md-12 col-sm-12 text-center">
+      <div class="col-md-12 col-sm-12 text-justify">
         <h1 id="main-text" class="display-4 mb-4"> Bem-vindo à Doccloud</h1>
-        <p class="lead offset-lg-2 col-lg-8 col-sm-12 ">Este é um sistema para validação por videoconferência do certificado digital para a rede Doccloud.</p>
+        <p class="lead col-lg-8 col-sm-12 " style="padding-left: 0px">
+          </br> A validação por videoconferência é uma nova emissão de certificado digital, com a diferença de que o cliente não precisa ir até um local de atendimento físico, basta comprar o certificado digital e agendar o atendimento no site da Doccloud.
+          </br></br> Podem solicitar a validação por videoconferência os clientes que adquiriram certificado A1 e que já tenham realizado emissão de certificado digital anterior, em qualquer Autoridade Certificadora ICP-Brasil, com coleta biométrica (impressão digital e foto).
+        </p>
         
         <%= link_to "http://doccloud.com.br", target: "_blank" do %>
-          <h4><%= t("landing.tutorial") %> <i class="fas fa-question-circle"></i> </h4>
+          <h4> Para este procedimento, verifique se pode ser atendido por videoconferência.</h4>
+        <% end %>
+
+        <%= form_for :cpf, url: "/validate" do |f| %>
+          <div class="input-icon mb-2">
+            <span class="input-icon-addon">
+              <i class="fas fa-id-card"></i>
+            </span>
+            <%= f.text_field :number, id: "check-main-cpf", class: "form-control text-center", value: "", placeholder: t("home.check_cpf"), autocomplete: :off %>
+            <div class="invalid-feedback text-left"><%= t("modal.create_room.not_blank") %></div>
+          </div>
+          <div class="mt-4">
+            <%= f.submit t("home.check"), id: "check-main-submit", class: "create-only btn btn-primary btn-block" %>
+          </div>
         <% end %>
       </div>
 

@@ -1,26 +1,48 @@
-# frozen_string_literal: true
-
-# BigBlueButton open source conferencing system - http://www.bigbluebutton.org/.
-#
-# Copyright (c) 2018 BigBlueButton Inc. and by respective authors (see below).
-#
-# This program is free software; you can redistribute it and/or modify it under the
-# terms of the GNU Lesser General Public License as published by the Free Software
-# Foundation; either version 3.0 of the License, or (at your option) any later
-# version.
-#
-# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-#
-# You should have received a copy of the GNU Lesser General Public License along
-# with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
-
 class MainController < ApplicationController
   include Registrar
+  require "net/http"
+  require "uri"
+  require 'json'
+  
   # GET /
   def index
     # Store invite token
     session[:invite_token] = params[:invite_token] if params[:invite_token] && invite_registration
+  end
+
+  # POST /validate
+  def validate
+    @cpf = Cpf.new(number: main_params[:number])
+
+    @cpf[:number].gsub(".", "")
+    @cpf[:number].gsub("-", "")
+
+
+    uri = URI.parse("https://arsoluti.acsoluti.com.br/site/idn-psbio-verify")
+    header = {'Content-Type': 'text/json'}
+    
+    # Create the HTTP objects
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    request = Net::HTTP::Post.new(uri.request_uri, header)
+    body = {cpf: @cpf[:number] }
+    request.body = body.to_json
+    
+    # Send the request
+    response = http.request(request)
+    result = JSON.parse(response.body)
+
+    if result["idnValid"]
+      flash[:success] = "O CPF #{@cpf[:number]} pode ser atendido por videoconferência!"
+    else
+      flash[:alert] = "O CPF #{@cpf[:number]} não pode ser atendido por videoconferência!"
+    end
+    
+    return redirect_to "/"
+  end
+
+  private
+  def main_params
+    params.require(:cpf).permit(:number)
   end
 end

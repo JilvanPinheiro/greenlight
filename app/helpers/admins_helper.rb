@@ -24,6 +24,12 @@ module AdminsHelper
     Room.find_by(bbb_id: room_id).owner.email
   end
 
+  # Gets Room info
+  def recording_data(room_id)
+    Room.find_by(bbb_id: room_id)
+
+  end
+
   def admin_invite_registration
     controller_name == "admins" && action_name == "index" &&
       @settings.get_value("Registration Method") == Rails.configuration.registration_methods[:invite]

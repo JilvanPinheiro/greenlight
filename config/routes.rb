@@ -103,6 +103,9 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#omniauth_fail'
   post '/auth/ldap', to: 'sessions#ldap', as: :ldap_callback
 
+  # Validate CPF
+  post '/validate', to: 'main#validate', as: :validate
+
   # Room resources.
   resources :rooms, only: [:create, :show, :destroy], param: :room_uid, path: '/'
 

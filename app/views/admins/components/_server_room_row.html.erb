@@ -47,11 +47,16 @@
             <i class="dropdown-icon fas fa-users"></i> <%= t("room.share") %>
           </a>
         <% end %>
-        <% if room.id != room.owner.room_id %>
-          <a href="" data-toggle="modal" data-target="#deleteRoomModal" data-path="<%= room_path(room) %>" data-name="<%= room.name %>" class="delete-room dropdown-item">
-            <i class="dropdown-icon far fa-trash-alt"></i> <%= t("delete") %>
-          </a>
+        
+        <% highest_role = current_user.highest_priority_role %>
+        <% if highest_role.get_permission("can_manage_users") || highest_role.name == "super_admin" %>
+          <% if room.id != room.owner.room_id %>
+            <a href="" data-toggle="modal" data-target="#deleteRoomModal" data-path="<%= room_path(room) %>" data-name="<%= room.name %>" class="delete-room dropdown-item">
+              <i class="dropdown-icon far fa-trash-alt"></i> <%= t("delete") %>
+            </a>
+          <% end %>
         <% end %>
+
       </div>
     </div>
   </td>

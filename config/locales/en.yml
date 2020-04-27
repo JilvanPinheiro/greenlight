@@ -159,6 +159,11 @@ en:
         uid: User ID
         username: Username
       title: Manage Users
+  home:
+    check_cpf: Check CPF
+    check: Check
+    not_allowed: It is not possible to issue this e-cpf by videoconference.
+    label: Make sure you can be answered by video conference.
   add_to_google_calendar: "Add to Google Calendar"
   bigbluebutton: Doccloud
   doccloud: Doccloud

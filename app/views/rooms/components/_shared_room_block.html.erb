@@ -16,18 +16,23 @@
             <%= t("room.shared_by", email: room.owner.name) %>
           </div>
         </td>
+
         <td class="text-right">
           <div class="item-action dropdown" data-display="static">
             <a href="javascript:void(0)" data-toggle="dropdown" data-display="static" class="icon">
               <i class="fas fa-ellipsis-v px-4"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left">
+            <% highest_role = current_user.highest_priority_role %>
+            <% if highest_role.get_permission("can_manage_users") || highest_role.name == "super_admin" %>
               <a href="" data-toggle="modal" data-target="#removeAccessModal" class="remove-share-room dropdown-item" data-path="<%= room_remove_shared_access_path(room) %>">
                 <i class="dropdown-icon far fa-trash-alt"></i> <%= t("remove") %> 
               </a>
+            <% end %>
             </div>
           </div>
         </td>
+
       </tbody>
     </table>
   </div>

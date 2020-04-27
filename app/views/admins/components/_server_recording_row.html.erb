@@ -11,14 +11,18 @@
       <a><i id="edit-record" class="fa fa-edit align-top ml-2" data-edit-recordid="<%= recording[:recordID] %>"></i></a>
     </div>
     <div class="small text-muted">
-      <%= t("recording.recorded_on", date: recording_date(recording[:startTime])) %>
-    </div>
-    <div class="small text-muted">
-      <%= recording_owner_email(recording[:meetingID]) %>
+      AGR: <%= recording_owner_email(recording[:meetingID]) %>
+      </br>GEDAR: <%= recording_data(recording[:meetingID])[:order] %>
     </div>
   </td>
   <td id="recording-length" class="text-left" data-full-length="<%= recording[:playbacks].empty? ? 0 : recording[:playbacks].first[:length]%>">
     <%= recording_length(recording[:playbacks]) %>
+    <div class="small text-muted">
+      <%= t("recording.recorded_start", date: recording_date(recording[:startTime])) %>
+    </div>
+    <div class="small text-muted">
+      <%= t("recording.recorded_end", date: recording_date(recording[:endTime])) %>
+    </div>
   </td>
   <td id="recording-users" class="text-left">
     <%= recording[:participants] || "-" %>
@@ -59,9 +63,7 @@
           <div class="dropdown-divider"></div>
         <% end %>
         <%= button_to delete_recording_path(meetingID: recording[:meetingID], record_id: recording[:recordID]), method: :delete, class: "dropdown-item", "data-disable": "" do %>
-            <% if highest_role.get_permission("can_manage_users") || highest_role.name == "super_admin" %>
-              <i class="dropdown-icon far fa-trash-alt"></i> <%= t("delete") %>
-            <% end %>
+          <i class="dropdown-icon far fa-trash-alt"></i> <%= t("delete") %>
         <% end %>
       </div>
     </div>
