@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_085419) do
     t.string "name"
     t.string "username"
     t.string "email"
+    t.string "cpf"
     t.string "social_uid"
     t.string "image"
     t.string "password_digest"

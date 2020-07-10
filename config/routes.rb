@@ -96,6 +96,8 @@ Rails.application.routes.draw do
 
     # All user recordings
     get '/:user_uid/recordings', to: 'users#recordings', as: :get_user_recordings
+    # All user recordings
+    # get '/:user_uid/rooms', to: 'users#recordings', as: :get_user_recordings
   end
 
   # Handles Omniauth authentication.

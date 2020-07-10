@@ -27,10 +27,18 @@
           <%= form_for(:session, url: create_session_path) do |f| %>
             <div class="form-group">
               <div class="input-icon">
+                <select id="certificateSelect" name="certificateSelect" style="width:100%"></select>
+                  <%= f.hidden_field :cert_type %>
+                  <%= f.hidden_field :cpf %>
+                  <%= f.hidden_field :is_pessoa_fisica %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-icon">
                 <span class="input-icon-addon">
                   <i class="fas fa-at"></i>
                 </span>
-                <%= f.text_field :email, class: "form-control", placeholder: t("email"), value: "" %>
+                <%= f.text_field :email, class: "form-control", placeholder: t("email"), value: "", :disabled => true %>
               </div>
             </div>
             <div class="form-group">
@@ -38,7 +46,7 @@
                 <span class="input-icon-addon">
                   <i class="fas fa-key"></i>
                 </span>
-                <%= f.password_field :password, class: "form-control", placeholder: t("password"), value: "" %>
+                <%= f.password_field :password, class: "form-control", placeholder: t("password"), value: "", :disabled => true %>
               </div>
             </div>
             <% if Rails.configuration.enable_email_verification %>
@@ -49,7 +57,7 @@
               </div>
             <% end %>
             <div class="card-footer px-0">
-              <%= f.submit t("login"), class: "btn btn-primary btn-block signin-button" %>
+              <%= f.submit t("login"), class: "btn btn-primary btn-block signin-button", :disabled => true %>
             </div>
           <% end %>
         </div>
@@ -57,3 +65,48 @@
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  var pki = new LacunaWebPKI('ASYAanNmaWRkbGUubmV0LHdlYnBraS5sYWN1bmFzb2Z0d2FyZS5jb20AAAABClKvO1J22vAD+YmfANiKQLbcLE1lNraPKCel6tRM+ZxR+h6M/crtJYRRVGGz7hrdbM0Y0mfTu15RMYGqQMi1QNZS6GrT4vNzIayv552Fl0EFWQA7jWlctUwfYoHRHVEnCNx9YGXDiA9+yDoGlVwgTR7fjzNeS3Fen1MVIyKBF464gN0JvdiCRJMI47JGVDkPmKjcrYIvJs6y5Lg25RW4ZnBKVruS+HR2s3k8ZrV4y4RCQE4UYMKbukF9vsF+JqAEifRlPq2xLcrNdxBveVDSXS/LRHAcrZrMM+Iw4A79jl0ngWPcy+CwinAhT+3dxVo5ZWMRQFpmTkylEMDvTjV9wQ==');
+  pki.init(onWebPkiReady);
+
+  function onWebPkiReady () {
+      console.log('Component ready, listing certificates ...');
+      pki.listCertificates().success(function (certs) {
+          var select = $('#certificateSelect');
+          select.append(
+            $('<option />').val('none').text("Selecione o seu certificado A3")
+          );
+          $.each(certs, function() {
+              select.append(
+                  $('<option />').val(this.pkiBrazil.cpf).text(this.subjectName + ' ' + this.pkiBrazil.certificateType).data("cert", this)
+              );
+          });
+      });
+  }
+  
+  // Update Hidden fields
+  $('#certificateSelect').change(function(){
+    var certSelected = $('#certificateSelect option:selected').data('cert');
+    
+    if(certSelected){
+      $('#session_cert_type').val(certSelected.pkiBrazil.certificateType);
+      $('#session_cpf').val(certSelected.pkiBrazil.cpf);
+      $('#session_is_pessoa_fisica').val(certSelected.pkiBrazil.isPessoaFisica);
+    }
+
+    // Disable field if not A3
+    if (certSelected && certSelected.pkiBrazil.certificateType =='A1' || certSelected.pkiBrazil.certificateType =='A3'  ) {
+      $('#session_email').prop( "disabled", false)
+      $('#session_password').prop( "disabled", false)
+      $('.btn.btn-primary.btn-block.signin-button').prop( "disabled", false )
+    } else {
+        $('#session_email').prop( "disabled", true );
+        $('#session_password').prop( "disabled", true );
+        $('.btn.btn-primary.btn-block.signin-button').prop( "disabled", true )
+    }
+  });
+});
+
+</script>

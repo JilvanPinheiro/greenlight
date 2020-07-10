@@ -65,6 +65,8 @@ class SessionsController < ApplicationController
   def create
     logger.info "Support: #{session_params[:email]} is attempting to login."
 
+    puts "Certificado: #{session_params[:cert_type]}."
+
     user = User.include_deleted.find_by(email: session_params[:email])
 
     is_super_admin = user&.has_role? :super_admin
@@ -93,6 +95,9 @@ class SessionsController < ApplicationController
         return redirect_to(account_activation_path(token: user.activation_token))
       end
     end
+
+    # user.cpf = session_params[:cpf]
+    # user.save
 
     login(user)
   end
@@ -161,7 +166,7 @@ class SessionsController < ApplicationController
   end
 
   def session_params
-    params.require(:session).permit(:email, :password)
+    params.require(:session).permit(:email, :password, :cert_type, :cpf, :is_pessoa_fisica)
   end
 
   def one_provider
