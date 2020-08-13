@@ -130,7 +130,7 @@ module Greenlight
     # DEFAULTS
 
     # Default branding image if the user does not specify one
-    config.branding_image_default = "http://doccloud.com.br/images/logo_2.png"
+    config.branding_image_default = "https://s3-sa-east-1.amazonaws.com/doccloud.com.br/logo_doccloud_com_texto_azul.png"
 
     # Default primary color if the user does not specify one
     config.primary_color_default = "#467fcf"
